@@ -1,0 +1,22 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: my-backend
+    ports:
+      - "3001:3000"
+    networks:
+      - my-app-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: myapp
+    networks:
+      - my-app-network
+
+networks:
+  my-app-network:
+    driver: bridge
