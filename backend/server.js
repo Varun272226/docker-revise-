@@ -14,7 +14,7 @@ const db = mysql.createPool({
 
 app.get("/", (req, res) => {
     res.json({
-        message: "Hello from Docker backend!"
+        message: "Hello from Docker backend v2!"
     });
 });
 
